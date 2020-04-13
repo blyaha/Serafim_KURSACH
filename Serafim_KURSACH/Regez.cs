@@ -34,6 +34,18 @@ namespace Serafim_KURSACH
         private void button1_Click(object sender, EventArgs e)
 
         {
+             if (serafimEntities.USERS.SingleOrDefault(
+          p => p.login == textBox1.Text && p.pass == textBox2.Text && p.role == 1) != null)
+                {
+                    Class1.id = textBox1.Text;
+                    MessageBox.Show("Крассавэла,все верно");
+                    new AdminMenu { Owner = this }.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль.");
+                }
 
             //AdminMenu f = new AdminMenu();
             //f.Show();
