@@ -35,10 +35,35 @@ namespace Serafim_KURSACH
         {
             //if (textBox3.Text =  1) 
             {
-     
+                if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0)
+                {
+                    if (textBox2.Text.Length == 6)
+                    {
+                        if (textBox1.Text.Length >= 6 && textBox2.Text.Length >= 6)
+                        {
+                            {
+                                serafimEntities.USERS.Add(new USERS
+                                {
+                                    login = textBox1.Text,
+                                    pass = textBox2.Text,
+                                    role = 1
+                                });
+                                serafimEntities.SaveChanges();
+                                DialogResult result = MessageBox.Show("Регистрация прошла", "БОДРЯК");
+                                new Autorez { Owner = this }.Show();
+                                Hide();
+                            }
+                        }
+                        else MessageBox.Show(" логин и пароль должны иметь не менЬше 6 знаков");
+                    }
+                    else MessageBox.Show("бро ");
+                }
+                else MessageBox.Show("Не всё есть");
             }
-          
+
         }
+
+    
 
         private void Autorez_Load(object sender, EventArgs e)
         {
