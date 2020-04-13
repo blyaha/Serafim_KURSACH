@@ -16,9 +16,12 @@ namespace Serafim_KURSACH
         public KNIGI()
         {
             InitializeComponent();
-           // dataGridView1.DataSource = SerafimEntities.BOOKS.ToList();
+            // dataGridView1.DataSource = SerafimEntities.BOOKS.ToList();
 
-             
+
+            dataGridView1.DataSource = AppData.Context.BOOKS.ToList();
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
